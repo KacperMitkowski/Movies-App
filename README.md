@@ -30,5 +30,4 @@ This is the final project ending 'web module' during my education in Codecool. I
 ![alt text](https://github.com/KacperMitkowski/Movies-App/blob/master/screenshots/movies_1.png)
 ![alt text](https://github.com/KacperMitkowski/Movies-App/blob/master/screenshots/movies_2.png)
 ![alt text](https://github.com/KacperMitkowski/Movies-App/blob/master/screenshots/movies_3.png)
-
-![alt text](https://github.com/KacperMitkowski/Memory-Game/blob/master/relational_model.png)
+![alt text](https://github.com/KacperMitkowski/Movies-App/blob/master/screenshots/relational_model.png)
