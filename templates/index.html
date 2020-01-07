@@ -1,0 +1,142 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <h1 class="title text-center">Welcome page</h1>
+    <div class="card">
+        <h2>Welcome TV show lovers!</h2>
+        <p>This great site is happy to bring you your favourite TV show's <i>details</i>.</p>
+
+        <div style="display: flex; justify-content: space-between;">
+            <div>
+                <button id="show_actors">How many times actor played in show</button>
+            </div>
+            <div>
+                <a href="/first_actors">
+                    <button id="first_20_actors">First {{ how_many_stars_in_button }} actors</button>
+                </a>
+            </div>
+            <div>
+                <a href="/api/top-actors">
+                    <button id="show_all_actors">All actors info</button>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+
+        {% if not hide_button %}
+            <button id="previousPageButton">Previous page</button>
+        {% else %}
+            <button id="previousPageButton" style="visibility: hidden;">Previous page</button>
+        {% endif %}
+
+        <button id="nextPageButton">Next page</button>
+
+        <div id="genre_sorting">
+            <label for="select_id">Which genre are you looking for?</label>
+            <select id="select_id">
+                {% for genre in genres %}
+                    <option data-id="{{ genre['name'] }}" value="{{ genre['name'] }}">{{ genre['name'] }}</option>
+                {% endfor %}
+            </select>
+
+            <button id="search_genre_button">Search</button>
+        </div>
+        <div style="text-align: right;">
+            <a href="/">-> Stop sorting</a>
+        </div>
+        <table>
+            <tr>
+                <th>#</th>
+                <th>Show<a href="#"><i id="title" class="fas fa-caret-up"></i></a></th>
+                <th>Year<a href="#"><i id="year" class="fas fa-caret-up"></i></a></th>
+                <th>Runtime<a href="#"><i id="runtime" class="fas fa-caret-up"></i></a></th>
+                <th>Genres<a href="#"></th>
+                <th>Rating<a href="#"><i id="rating" class="fas fa-caret-up"></i></a></th>
+                <th>Trailer</th>
+                <th>Homepage</th>
+                <th>Seasons</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+            {% if how_many_movies_per_page and how_many_genres_displayed %}
+                {% for movie_nr in range(how_many_movies_per_page) %}
+                    <tr>
+{#                                  ==================== Film index ==================== #}
+
+                        <td>{{ loop.index }}</td>
+
+{#                                  ==================== Film title ==================== #}
+
+                        <td>
+                            <a href="/tv-show/{{ shows[movie_nr]['id'] }}">
+                                {{ shows[movie_nr]['title'] }}
+                            </a>
+                        </td>
+{#                                  ==================== Film year ==================== #}
+
+                        <td>{{ shows[movie_nr]['year'] }}</td>
+
+{#                                  ==================== Film Runtime ==================== #}
+
+                        <td>{{ shows[movie_nr]['runtime'] }}</td>
+
+{#                                  ==================== Film Genres ==================== #}
+                        <td>
+                            {% for i in range(how_many_genres_displayed) %}
+                                {{ shows[movie_nr]['genre'][i] }}
+                            {% endfor %}
+                        </td>
+
+{#                                  ==================== Film Rating ==================== #}
+
+                        <td>{{ shows[movie_nr]['rating'] }}</td>
+
+{#                                  ==================== Film Trailer ==================== #}
+                        <td>
+                            {% if shows[movie_nr]['trailer'] %}
+                                <a href="{{ shows[movie_nr]['trailer'] }}" target="_blank">
+                                    <i class="fas fa-film"></i>
+                                </a>
+                            {% else %}
+                                No trailer
+                            {% endif %}
+                        </td>
+
+{#                                  ==================== Film Homepage ==================== #}
+                        <td>
+                            {% if shows[movie_nr]['homepage'] %}
+                                <a href="{{ shows[movie_nr]['homepage'] }}" target="_blank">
+                                    <i class="fas fa-home"></i>
+                                </a>
+                            {% else %}
+                                No homepage
+                            {% endif %}
+                        </td>
+
+{#                                  ==================== Film Seasons button ==================== #}
+
+                        <td>
+                            <button data-show_id="{{ shows[movie_nr]['id'] }}" class="season_button">
+                                {{ shows[movie_nr]['seasons']|length }} Season
+                            </button></td>
+
+{#                                  ==================== Edit/Delete buttons ==================== #}
+
+                        <td><a href="#"><i class="fas fa-edit"></i></a></td>
+                        <td><a href="#"><i class="fas fa-trash-alt"></i></a></td>
+                    </tr>
+                {% endfor %}
+            {% endif %}
+        </table>
+
+
+    </div>
+    {% if page_info %}
+        <script>
+          localStorage.setItem('page', {{ page_info|tojson|safe }});
+        </script>
+    {% endif %}
+
+{% endblock %}

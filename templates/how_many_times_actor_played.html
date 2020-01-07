@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+{% block content %}
+
+    <h1 class="title text-center">Actors</h1>
+    <nav class="breadcrumb">&gt; <a href="/">Go to main menu</a></nav>
+
+    <div class="card">
+        <label for="actor_select">In at least how many films?</label>
+        <select id="actor_select">
+            {% for i in range(1, options_amount + 1) %}
+                <option class="actor_option" data-actors_amount="{{ i }}" value="{{ i }}">{{ i }}</option>
+            {% endfor %}
+        </select>
+        <button id="show_film_amount_button">Show</button>
+    </div>
+
+    <div class="card">
+        <table style="margin: 20px 0px;">
+            <tr>
+                <th>{{ actors|length }} actor(s)</th>
+                <th>Played at least in {{ movies_amount }} film(s)</th>
+            </tr>
+        </table>
+        <a href="/add_actor"><button>Press here to add new actor</button></a>
+    </div>
+
+    <div class="card">
+        <table>
+            <tr>
+                <th>#</th>
+                <th>Actor</th>
+                <th>Comment</th>
+            </tr>
+
+            {% if actors|length >= 1 %}
+                {% for actor in actors %}
+                    <tr>
+                        <td>{{ loop.index }}</td>
+                        <td>{{ actor['name'] }}</td>
+                        <td>Played at least in {{ movies_amount }} film(s)</td>
+                    </tr>
+                {% endfor %}
+            {% else %}
+                <tr>
+                    <td>No actors played at least in {{ movies_amount }} film(s)</td>
+                    <td>No actors played at least in {{ movies_amount }} film(s)</td>
+                    <td>No actors played at least in {{ movies_amount }} film(s)</td>
+                </tr>
+            {% endif %}
+        </table>
+    </div>
+
+{% endblock %}

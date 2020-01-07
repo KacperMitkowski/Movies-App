@@ -1,0 +1,83 @@
+{% extends "layout.html" %}
+{% block content %}
+
+    <h1 class="title text-center">Movie details</h1>
+    <nav class="breadcrumb">
+        <a href="/">List of all the shows</a>
+        <span class="separator">&gt;</span>
+        {{ show['title'] }}
+    </nav>
+    <div class="card">
+        <table>
+            <tr>
+                <th>Title</th>
+                <th>Year</th>
+                <th>Seasons</th>
+                <th>Total episodes</th>
+                <th>Genre</th>
+            </tr>
+            <tr>
+                <td>{{ show['title'] }}</td>
+                <td>{{ show['year'] }}</td>
+                <td>{{ seasons|length }}</td>
+                <td>{{ show['total_episodes_amount'] }}</td>
+                <td>{{ show['genres'] }}</td>
+            </tr>
+        </table>
+    </div>
+    <div class="card detailed-view">
+        <div class="row">
+            <div style="display: flex;">
+                {% if show['trailer'] %}
+                    <div style="text-align: right;">
+                        <iframe src="{{ show['trailer'] }}" style="width: 400px; height: 250px;"></iframe>
+                    </div>
+                {% else %}
+                    <div style="text-align: left; width: 1000px;">
+                        No trailer to display
+                    </div>
+                {% endif %}
+                <div class="col col-twothird" style="padding: 25px;">
+                    <h2>{{ show['title'] }}</h2>
+                    <p class="small grayed">
+                        {{ show['year'] }} | {{ show['genres'] }} | Episodes: {{ show['episodes_amount'] }}
+                    </p>
+                    <p>
+                        {{ show['overview'] }}
+                    </p>
+                    <b>Stars:</b>
+                    {% for i in range(show['stars_amount']) %}
+                        {{ show['actors'][i] }} |
+                    {% endfor %}
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <div class="card">
+        <div style="text-align: center;">
+            <h1>Seasons</h1>
+        </div>
+        <div id="flex-container">
+            {% for season in seasons %}
+                <div class="season_col">
+                    <div class="season_header">
+                        {{ season['season_title'] }}
+                    </div>
+                    {% for episode in season['episodes'] %}
+
+                        <div class="season_title">{{ loop.index }}.
+
+                            <a style="cursor: pointer;" data-single_episode_id="{{ episode['episode_id'] }}" class="episode_link">{{ episode['episode_title'] }}
+                            </a>
+                        </div>
+                    {% endfor %}
+
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+{% endblock %}

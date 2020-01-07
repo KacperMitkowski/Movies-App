@@ -1,0 +1,103 @@
+.title {
+    color: #fff;
+    text-shadow: 0 0 4px rgba(255, 255, 255, .3), 0 0 6px rgba(255, 255, 255, .2);
+}
+
+.text-center {
+    text-align: center;
+}
+
+.small {
+    font-size: .75em;
+}
+
+.grayed {
+    color: #777;
+}
+
+.separator {
+    font-weight: 100;
+    padding: 0 5px;
+}
+
+nav {
+    margin-bottom: 20px;
+}
+
+.fa-caret-up {
+    border: 1px dotted #000;
+    border-radius: 100%;
+    padding: 2px;
+    margin-left: 5px;
+    color: red;
+    background-color: #ccc;
+    font-size: 20px;
+}
+
+.fa-caret-down {
+    border: 1px dotted #000;
+    border-radius: 100%;
+    padding: 2px;
+    margin-left: 5px;
+    color: red;
+    background-color: indianred;
+    font-size: 20px;
+}
+
+.fa-caret-up:hover {
+    background-color: yellow;
+    color: #000;
+}
+
+.fa-caret-down:hover {
+    background-color: yellow;
+    color: #000;
+}
+
+#add_actor_error {
+    color: red;
+    font-size: 30px;
+    letter-spacing: 3px;
+}
+
+#flex-container {
+    display: flex;
+    justify-content: center;
+}
+
+.season_col {
+    text-align: center;
+    border: 1px solid #000;
+    font-size: 20px;
+    background-color: #65adfa;
+}
+
+.season_header {
+
+    padding: 10px;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.season_title {
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+    height: 80px;
+    font-size: 18px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+
+}
+
+.season_title a {color: #000;}
+.season_title a:hover {color: red;}
+
+.season_col > .season_title:nth-child(even) {
+    background-color: #ddd;
+}
+
+.season_col > .season_title:nth-child(odd) {
+    background-color: #bbb;
+}

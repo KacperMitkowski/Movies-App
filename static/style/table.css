@@ -1,0 +1,34 @@
+table {
+    width: 100%;
+    margin-top: 10px;
+    border-spacing: 0;
+    border: 1px solid #278bc4;
+    border-radius: 3px;
+}
+
+table th {
+    color: #000;
+    background: greenyellow;
+    width: 9%;
+    border: 1px solid #000;
+}
+
+table td {
+    font-size: 13px;
+    text-align: center;
+    border: 1px solid #000;
+}
+
+table th,
+table td {
+    margin: 0;
+    padding: 6px;
+}
+
+table tr:nth-child(even) {
+    background: #edf3f7;
+}
+
+table th.action-column {
+    background: rgb(203, 75, 70);
+}

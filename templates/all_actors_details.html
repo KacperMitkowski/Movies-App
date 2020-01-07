@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <h1 class="title text-center">Actors' info</h1>
+    <nav class="breadcrumb">
+        <a href="/">Go to main menu</a>
+    </nav>
+    <div class="card">
+        <table style="margin: 20px 0px;">
+            <tr>
+                <th>actor id</th>
+                <th>actor name</th>
+                <th>actor birthday</th>
+                <th>actor death</th>
+                <th>actor biography</th>
+                <th>show id</th>
+                <th>show title</th>
+            </tr>
+            {% for actor in actors %}
+                <tr>
+                    <td>{{ actor['actor_id'] }}</td>
+                    <td>{{ actor['actor_name'] }}</td>
+                    <td>{{ actor['actor_birthday'] }}</td>
+                    <td>{{ actor['actor_death'] }}</td>
+                    <td style="text-align: left;">{{ actor['actor_biography'] }}</td>
+                    <td>{{ actor['show_id'] }}</td>
+                    <td>{{ actor['show_title'] }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+
+    </div>
+
+
+
+{% endblock %}

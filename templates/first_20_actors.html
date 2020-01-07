@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+{% block content %}
+
+    <h1 class="title text-center">Top actors</h1>
+    <nav class="breadcrumb">
+        <a href="/">Go to main menu</a>
+    </nav>
+    <div class="card">
+        <table>
+
+            <tr>
+                <th>#</th>
+                <th>Actor</th>
+                <th>Shows</th>
+            </tr>
+
+
+            {% for i in range(actors_amount) %}
+                <tr>
+                    <td>{{ loop.index }}</td>
+                    <td>
+                        <a href="#!" data-actor_id="{{ data[i]['id'] }}" class="actor_link">{{ data[i]['name'] }}</a>
+                    </td>
+                    <td>
+                        {% for movie in data[i]['movie'] %}
+{#                                    {% if loop.index == data[i]['movie']|length-1 %}#}
+                            {{ movie }},
+{#                                    {% else %}#}
+{#                                        {{ movie }}#}
+{#                                    {% endif %}#}
+                        {% endfor %}
+                    </td>
+                </tr>
+            {% endfor %}
+
+        </table>
+    </div>
+
+{% endblock %}

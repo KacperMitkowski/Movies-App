@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="Awesome page prepared by Kacper Mitkowski"/>
+    <meta name="keywords" content="Programming, movies, Codecool, Python, Flask, JS, CSS, HTML, SQL"/>
+    <meta name="author" content="Kacper Mitkowski"/>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Kacper Mitkowski PA</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css"/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+          integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/site.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/header.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/footer.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/button.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/card.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/table.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/form.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/utils.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/modals.css') }}">
+
+    <script src="{{ url_for('static', filename='js/main.js') }}" type="module" defer></script>
+    <script src="{{ url_for('static', filename='js/pagination.js') }}" type="module" defer></script>
+    <script src="{{ url_for('static', filename='js/sorting.js') }}" type="module" defer></script>
+    <script src="{{ url_for('static', filename='js/seasons.js') }}" type="module" defer></script>
+    <script src="{{ url_for('static', filename='js/genre.js') }}" type="module" defer></script>
+    <script src="{{ url_for('static', filename='js/styles.js') }}" type="module" defer></script>
+    <script src="{{ url_for('static', filename='js/actors.js') }}" type="module" defer></script>
+    <script src="{{ url_for('static', filename='js/episodes.js') }}" type="module" defer></script>
+    <script src="{{ url_for('static', filename='js/utils.js') }}" type="module" defer></script>
+</head>
+<body>
+    <header class="clearfix">
+        <img id="header-logo" src="{{ url_for('static', filename='assets/codecool-logo.png') }}" alt="Codecool Logo">
+        <span id="header-title" class="title">Codecool Series DB</span>
+        <div id="header-auth">
+            <button type="button" id="bt_register">Register</button>
+            <button type="button" id="bt_login">Login</button>
+        </div>
+    </header>
+
+    <div id="body-wrapper">
+        <section>
+            {% block content %}{% endblock %}
+        </section>
+    </div>
+
+    <footer>
+        Page prepared by Kacper Mitkowski. All rights reserved &copy;
+    </footer>
+
+    <div id="season_modal" class="modal"></div>
+    <div id="actor_details_modal" class="modal"></div>
+    <div id="episode_modal" class="modal"></div>
+</body>
+</html>

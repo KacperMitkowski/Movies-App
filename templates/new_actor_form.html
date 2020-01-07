@@ -1,0 +1,61 @@
+{% extends "layout.html" %}
+{% block content %}
+
+    <h1 id="message_for_the_user" class="title text-center">Add new actor</h1>
+
+    <nav class="breadcrumb">
+        &gt; <a href="/">Go to main menu</a>
+    </nav>
+
+    <div id="add_new_actor_div" class="card" >
+
+        <form id="add_actor_form">
+            <div>
+                <label for="actor_first_name">Actor first name</label>
+            </div>
+            <div>
+                <input id="actor_first_name" type="text" placeholder="First name" required />
+            </div>
+            <hr />
+
+            <div>
+                <label for="actor_last_name">Actor last name</label>
+            </div>
+            <div>
+                <input id="actor_last_name" type="text" placeholder="Last name" required />
+            </div>
+            <hr />
+
+            <div>
+                <label for="actor_birthday">Actor birthday</label>
+            </div>
+            <div>
+                <input id="actor_birthday" type="date"/>
+            </div>
+            <hr />
+
+            <div>
+                <label for="actor_death">Actor's death</label>
+            </div>
+            <div>
+                <input id="actor_death" type="date"/>
+            </div>
+            <hr />
+
+            <div>
+                <label for="actor_biography">Actor biography</label>
+            </div>
+            <div>
+                <textarea id="actor_biography"></textarea>
+            </div>
+            <hr />
+
+            <div>
+                <button id="add_new_actor_button">Add new actor</button>
+            </div>
+        </form>
+
+        <div id="add_actor_error" style="display: none;"></div>
+    </div>
+
+{% endblock %}
