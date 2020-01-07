@@ -26,8 +26,11 @@ This is the final project ending 'web module' during my education in Codecool. I
 * SQL
 
 ## Screenshots:
-
+All movies:
 ![alt text](https://github.com/KacperMitkowski/Movies-App/blob/master/screenshots/movies_1.png)
+Movie details:
 ![alt text](https://github.com/KacperMitkowski/Movies-App/blob/master/screenshots/movies_2.png)
+Actors' details:
 ![alt text](https://github.com/KacperMitkowski/Movies-App/blob/master/screenshots/movies_3.png)
+Relational model:
 ![alt text](https://github.com/KacperMitkowski/Movies-App/blob/master/screenshots/relational_model.png)
