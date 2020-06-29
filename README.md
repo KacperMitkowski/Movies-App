@@ -18,12 +18,9 @@ This is the final project ending 'web module' during my education in Codecool. I
   * SQL
 
 ## Used technology:
-* JavaScript
-* Flask (micro web framework for Python)
-* HTML
-* CSS
-* Python
-* SQL
+* Flask
+* Python (Postgres)
+* HTML, CSS, JS
 
 ## Screenshots:
 All movies:
