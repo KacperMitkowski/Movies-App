@@ -9,13 +9,11 @@ This is the final project ending 'web module' during my education in Codecool. I
 **The goal was to:** 
 * use Flask to create a simple web server
 * practice front-end skills: 
-  * JavaScript
-  * HTML/CSS
+  * HTML, CS, JS
   * DOM manipulation
   * web design
 * practice back-end skills:
-  * Python
-  * SQL
+  * Python (Postgres)
 
 ## Used technology:
 * Flask
